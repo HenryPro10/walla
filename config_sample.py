@@ -19,10 +19,10 @@ KEY_ANTIGATE = ''
 
 # Ключ от прокси серверов https://proxy6.net/
 # Опционально
-PROXY_API_KEY = ''
+# PROXY_API_KEY = ''
 
 # Данные для google
 # Опционально
-GOOGLE_USER = ''
-GOOGLE_PASS = ''
-GOOGLE_ANSWER = ''
+# GOOGLE_USER = ''
+# GOOGLE_PASS = ''
+# GOOGLE_ANSWER = ''
