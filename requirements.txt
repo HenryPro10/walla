@@ -1,0 +1,17 @@
+alembic==0.9.7
+anti==3.2.4
+beautifulsoup4==4.6.0
+Flask==0.12.2
+Flask-Migrate==2.1.1
+Flask-Script==2.0.6
+Flask-SQLAlchemy==2.3.2
+Jinja2==2.10
+pika==0.10.0
+psycopg2==2.7.3.2
+python-whois==0.6.8
+redis==2.10.6
+requests==2.18.4
+SQLAlchemy==1.2.2
+urllib3==1.22
+Werkzeug==0.14.1
+six==1.11.0

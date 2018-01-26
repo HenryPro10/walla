@@ -1,0 +1,34 @@
+version: '3'
+services:
+    rabbit:
+        image: rabbitmq
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - ../data/mysql:/var/lib/mysql
+        restart: always
+        ports:
+            - "5672:5672"
+    redis:
+        image: redis
+        restart: always
+        ports: 
+            - "6379:6379"
+    anti:
+        depends_on:
+            - rabbit
+            - redis
+        volumes:
+            - ./config.py:/usr/local/bin/config.py
+            - ./anti.conf:/etc/supervisor/conf.d/anti.conf
+        command: ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
+        image: henry364/anti-server-chrome:latest
+    server:
+        build: .
+        depends_on:
+            - anti
+        volumes:
+            - .:/root/
+        ports:
+            - "5000:5000"
+        command: ["/usr/local/bin/python", "/root/server.py", "runserver"]
